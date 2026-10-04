@@ -1,5 +1,18 @@
 package com.latidens.borealis;
 
+import com.latidens.borealis.block.ModBlocks;
+import com.latidens.borealis.block.ModFlammables;
+import com.latidens.borealis.datagen.DataGenerators;
+import com.latidens.borealis.datagen.ModBlockLootTableProvider;
+import com.latidens.borealis.datagen.ModBlockStateProvider;
+import com.latidens.borealis.event.ModCreativeTabs;
+import com.latidens.borealis.item.ModItems;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FireBlock;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -23,30 +36,36 @@ public class Borealis {
     public static final String MOD_ID = "borealis";
     private static final Logger LOGGER = LogUtils.getLogger();
 
+
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
     public Borealis(IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
-
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+
+        modEventBus.register(DataGenerators.class);
+
+
+
         // Register the item to a creative tab
-        modEventBus.addListener(this::addCreative);
+        modEventBus.addListener(ModCreativeTabs::addCreative);
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-
+        event.enqueueWork(ModFlammables::register);
     }
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

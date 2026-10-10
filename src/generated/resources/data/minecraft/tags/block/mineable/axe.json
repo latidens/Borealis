@@ -1,0 +1,17 @@
+{
+  "values": [
+    "borealis:aspen_log",
+    "borealis:stripped_aspen_log",
+    "borealis:aspen_wood",
+    "borealis:stripped_aspen_wood",
+    "borealis:aspen_planks",
+    "borealis:aspen_stairs",
+    "borealis:aspen_slab",
+    "borealis:aspen_button",
+    "borealis:aspen_pressure_plate",
+    "borealis:aspen_door",
+    "borealis:aspen_trapdoor",
+    "borealis:aspen_fence",
+    "borealis:aspen_fence_gate"
+  ]
+}

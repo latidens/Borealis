@@ -22,7 +22,16 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.ASPEN_LOG.get())
                 .add(ModBlocks.STRIPPED_ASPEN_LOG.get())
                 .add(ModBlocks.ASPEN_WOOD.get())
-                .add(ModBlocks.STRIPPED_ASPEN_WOOD.get());
+                .add(ModBlocks.STRIPPED_ASPEN_WOOD.get())
+                .add(ModBlocks.ASPEN_PLANKS.get())
+                .add(ModBlocks.ASPEN_STAIRS.get())
+                .add(ModBlocks.ASPEN_SLAB.get())
+                .add(ModBlocks.ASPEN_BUTTON.get())
+                .add(ModBlocks.ASPEN_PRESSURE_PLATE.get())
+                .add(ModBlocks.ASPEN_DOOR.get())
+                .add(ModBlocks.ASPEN_TRAPDOOR.get())
+                .add(ModBlocks.ASPEN_FENCE.get())
+                .add(ModBlocks.ASPEN_FENCE_GATE.get());
         tag(BlockTags.LOGS)
                 .add(ModBlocks.ASPEN_LOG.get())
                 .add(ModBlocks.STRIPPED_ASPEN_LOG.get())
@@ -35,5 +44,43 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.STRIPPED_ASPEN_WOOD.get());
         tag(BlockTags.OVERWORLD_NATURAL_LOGS)
                 .add(ModBlocks.ASPEN_LOG.get());
+        tag(BlockTags.PLANKS)
+                .add(ModBlocks.ASPEN_PLANKS.get());
+        tag(BlockTags.FENCES)
+                .add(ModBlocks.ASPEN_FENCE.get());
+        tag(BlockTags.WOODEN_FENCES)
+                .add(ModBlocks.ASPEN_FENCE.get());
+        tag(BlockTags.FENCE_GATES)
+                .add(ModBlocks.ASPEN_FENCE_GATE.get());
+        tag(BlockTags.WOODEN_BUTTONS)
+                .add(ModBlocks.ASPEN_BUTTON.get());
+        tag(BlockTags.BUTTONS)
+                .add(ModBlocks.ASPEN_BUTTON.get());
+        tag(BlockTags.PRESSURE_PLATES)
+                .add(ModBlocks.ASPEN_PRESSURE_PLATE.get());
+        tag(BlockTags.WOODEN_PRESSURE_PLATES)
+                .add(ModBlocks.ASPEN_PRESSURE_PLATE.get());
+        tag(BlockTags.WOODEN_DOORS)
+                .add(ModBlocks.ASPEN_DOOR.get());
+        tag(BlockTags.DOORS)
+                .add(ModBlocks.ASPEN_DOOR.get());
+        tag(BlockTags.WOODEN_TRAPDOORS)
+                .add(ModBlocks.ASPEN_TRAPDOOR.get());
+        tag(BlockTags.STAIRS)
+                .add(ModBlocks.ASPEN_STAIRS.get());
+        tag(BlockTags.WOODEN_STAIRS)
+                .add(ModBlocks.ASPEN_STAIRS.get());
+        tag(BlockTags.SLABS)
+                .add(ModBlocks.ASPEN_SLAB.get());
+        tag(BlockTags.WOODEN_SLABS)
+                .add(ModBlocks.ASPEN_SLAB.get());
+        tag(BlockTags.TRAPDOORS)
+                .add(ModBlocks.ASPEN_TRAPDOOR.get());
+        tag(BlockTags.LEAVES)
+                .add(ModBlocks.ASPEN_LEAVES.get())
+                .add(ModBlocks.GOLDEN_ASPEN_LEAVES.get());
+        tag(BlockTags.MINEABLE_WITH_HOE)
+                .add(ModBlocks.ASPEN_LEAVES.get())
+                .add(ModBlocks.GOLDEN_ASPEN_LEAVES.get());
     }
 }

@@ -1,0 +1,10 @@
+{
+  "values": {
+    "borealis:aspen_log": {
+      "stripped_block": "borealis:stripped_aspen_log"
+    },
+    "borealis:aspen_wood": {
+      "stripped_block": "borealis:stripped_aspen_wood"
+    }
+  }
+}

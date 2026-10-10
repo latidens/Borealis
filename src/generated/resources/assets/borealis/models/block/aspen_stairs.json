@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "borealis:block/aspen_planks",
+    "side": "borealis:block/aspen_planks",
+    "top": "borealis:block/aspen_planks"
+  }
+}

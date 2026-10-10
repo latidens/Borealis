@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "borealis:block/aspen_slab"
+    },
+    "type=double": {
+      "model": "borealis:block/aspen_planks"
+    },
+    "type=top": {
+      "model": "borealis:block/aspen_slab_top"
+    }
+  }
+}

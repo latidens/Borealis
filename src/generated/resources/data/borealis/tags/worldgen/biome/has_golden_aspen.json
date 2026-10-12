@@ -1,0 +1,10 @@
+{
+  "values": [
+    "minecraft:taiga",
+    "minecraft:snowy_taiga",
+    {
+      "id": "nomansland:boreal_forest",
+      "required": false
+    }
+  ]
+}

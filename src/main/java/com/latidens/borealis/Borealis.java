@@ -6,6 +6,7 @@ import com.latidens.borealis.datagen.DataGenerators;
 import com.latidens.borealis.datagen.ModBlockLootTableProvider;
 import com.latidens.borealis.datagen.ModBlockStateProvider;
 import com.latidens.borealis.event.ModCreativeTabs;
+import com.latidens.borealis.integration.NoMansLandIntegration;
 import com.latidens.borealis.item.ModItems;
 import com.latidens.borealis.worldgen.tree.ModFoliagePlacers;
 import net.minecraft.world.item.CreativeModeTab;
@@ -14,6 +15,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FireBlock;
+import net.neoforged.fml.ModList;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -60,6 +62,10 @@ public class Borealis {
         modEventBus.addListener(ModCreativeTabs::addCreative);
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
+        if (ModList.get().isLoaded("nomansland")) {
+            NoMansLandIntegration.init();
+        }
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

@@ -1,11 +1,14 @@
 package com.latidens.borealis.datagen;
 
 import com.latidens.borealis.block.ModBlocks;
+import com.latidens.borealis.integration.NoMansLandIntegration;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.neoforged.fml.common.Mod;
 import org.jetbrains.annotations.NotNull;
 
@@ -31,6 +34,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.ASPEN_BUTTON.get());
         dropSelf(ModBlocks.ASPEN_SAPLING.get());
         dropSelf(ModBlocks.GOLDEN_ASPEN_SAPLING.get());
+        dropSelf(NoMansLandIntegration.TRIMMED_ASPEN_PLANKS.get());
 
         add(ModBlocks.ASPEN_SLAB.get(),
                 block -> createSlabItemTable(ModBlocks.ASPEN_SLAB.get()));
@@ -42,6 +46,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 createLeavesDrops(block, ModBlocks.ASPEN_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(ModBlocks.GOLDEN_ASPEN_LEAVES.get(), block ->
                 createLeavesDrops(block, ModBlocks.GOLDEN_ASPEN_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        add(NoMansLandIntegration.ASPEN_BOOKSHELF.get(),
+                block -> createSingleItemTableWithSilkTouch(block, Items.BOOK, ConstantValue.exactly(3.0f)));
     }
 
 

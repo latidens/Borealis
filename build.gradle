@@ -28,6 +28,14 @@ sourceSets.main.resources {
 
 repositories {
     // Add here additional repositories if required by some of the dependencies below.
+    exclusiveContent {
+        forRepository {
+            maven { url "https://api.modrinth.com/maven" }
+        }
+        filter {
+            includeGroup "maven.modrinth"
+        }
+    }
 }
 
 base {
@@ -137,6 +145,9 @@ dependencies {
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
+
+    compileOnly "maven.modrinth:no-mans-land:1.5.12"
+    localRuntime "maven.modrinth:no-mans-land:1.5.12"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

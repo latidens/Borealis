@@ -1,7 +1,10 @@
 package com.latidens.borealis.datagen;
 
+import com.farcr.nomansland.NoMansLand;
+import com.farcr.nomansland.common.registry.NMLTags;
 import com.latidens.borealis.Borealis;
 import com.latidens.borealis.block.ModBlocks;
+import com.latidens.borealis.integration.NoMansLandIntegration;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -10,6 +13,7 @@ import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
+import javax.swing.text.html.HTML;
 import java.util.concurrent.CompletableFuture;
 
 public class ModBlockTagProvider extends BlockTagsProvider {
@@ -32,7 +36,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.ASPEN_DOOR.get())
                 .add(ModBlocks.ASPEN_TRAPDOOR.get())
                 .add(ModBlocks.ASPEN_FENCE.get())
-                .add(ModBlocks.ASPEN_FENCE_GATE.get());
+                .add(ModBlocks.ASPEN_FENCE_GATE.get())
+                .add(NoMansLandIntegration.TRIMMED_ASPEN_PLANKS.get())
+                .add(NoMansLandIntegration.ASPEN_BOOKSHELF.get());
         tag(BlockTags.LOGS)
                 .add(ModBlocks.ASPEN_LOG.get())
                 .add(ModBlocks.STRIPPED_ASPEN_LOG.get())
@@ -46,7 +52,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.OVERWORLD_NATURAL_LOGS)
                 .add(ModBlocks.ASPEN_LOG.get());
         tag(BlockTags.PLANKS)
-                .add(ModBlocks.ASPEN_PLANKS.get());
+                .add(ModBlocks.ASPEN_PLANKS.get())
+                .add(NoMansLandIntegration.TRIMMED_ASPEN_PLANKS.get());
         tag(BlockTags.FENCES)
                 .add(ModBlocks.ASPEN_FENCE.get());
         tag(BlockTags.WOODEN_FENCES)
@@ -86,5 +93,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.SAPLINGS)
                 .add(ModBlocks.ASPEN_SAPLING.get())
                 .add(ModBlocks.GOLDEN_ASPEN_SAPLING.get());
+        tag(BlockTags.ENCHANTMENT_POWER_PROVIDER)
+                .add(NoMansLandIntegration.ASPEN_BOOKSHELF.get());
+        tag(NMLTags.TRIMMED_PLANKS.blockTag())
+                .add(NoMansLandIntegration.TRIMMED_ASPEN_PLANKS.get());
     }
 }

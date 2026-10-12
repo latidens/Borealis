@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "borealis:block/trimmed_aspen_planks_top",
+    "east": "borealis:block/trimmed_aspen_planks_lower",
+    "north": "borealis:block/trimmed_aspen_planks_lower",
+    "particle": "borealis:block/trimmed_aspen_planks_top",
+    "south": "borealis:block/trimmed_aspen_planks_lower",
+    "up": "borealis:block/trimmed_aspen_planks_top",
+    "west": "borealis:block/trimmed_aspen_planks_lower"
+  }
+}

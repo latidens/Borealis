@@ -1,5 +1,7 @@
 package com.latidens.borealis.datagen;
 
+import com.farcr.nomansland.common.registry.NMLTags;
+import com.farcr.nomansland.datagen.tags.NMLItemTagsProvider;
 import com.latidens.borealis.Borealis;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -39,5 +41,6 @@ public class ModItemTagProvider extends ItemTagsProvider {
         copy(BlockTags.WOODEN_TRAPDOORS, ItemTags.WOODEN_TRAPDOORS);
         copy(BlockTags.LEAVES, ItemTags.LEAVES);
         copy(BlockTags.SAPLINGS, ItemTags.SAPLINGS);
+        copy(NMLTags.TRIMMED_PLANKS.blockTag(), NMLTags.TRIMMED_PLANKS.itemTag());
     }
 }

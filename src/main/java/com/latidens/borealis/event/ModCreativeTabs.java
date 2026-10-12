@@ -1,6 +1,7 @@
 package com.latidens.borealis.event;
 
 import com.latidens.borealis.block.ModBlocks;
+import com.latidens.borealis.integration.NoMansLandIntegration;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
@@ -75,6 +76,16 @@ public class ModCreativeTabs {
             );
             event.insertAfter(
                     new ItemStack(ModBlocks.ASPEN_SLAB),
+                    new ItemStack(NoMansLandIntegration.ASPEN_BOOKSHELF.get()),
+                    CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
+            );
+            event.insertAfter(
+                    new ItemStack(NoMansLandIntegration.ASPEN_BOOKSHELF),
+                    new ItemStack(NoMansLandIntegration.TRIMMED_ASPEN_PLANKS.get()),
+                    CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
+            );
+            event.insertAfter(
+                    new ItemStack(NoMansLandIntegration.TRIMMED_ASPEN_PLANKS),
                     new ItemStack(ModBlocks.ASPEN_FENCE.get()),
                     CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
             );

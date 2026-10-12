@@ -13,7 +13,6 @@ import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -203,7 +202,7 @@ public class ModBlocks {
     public static final DeferredBlock<SaplingBlock> GOLDEN_ASPEN_SAPLING = registerBlock("golden_aspen_sapling",
             () -> new SaplingBlock(ModTreeGrowers.GOLDEN_ASPEN, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
 
-    private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
+    public static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
         return toReturn;

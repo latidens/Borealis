@@ -1,5 +1,6 @@
 package com.latidens.borealis.block;
 
+import com.latidens.borealis.integration.NoMansLandIntegration;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FireBlock;
 import net.neoforged.fml.common.Mod;
@@ -22,5 +23,7 @@ public class ModFlammables {
         fire.setFlammable(ModBlocks.ASPEN_TRAPDOOR.get(), 5, 5);
         fire.setFlammable(ModBlocks.ASPEN_LEAVES.get(), 30, 60);
         fire.setFlammable(ModBlocks.GOLDEN_ASPEN_LEAVES.get(), 30, 60);
+        fire.setFlammable(NoMansLandIntegration.TRIMMED_ASPEN_PLANKS.get(), 5, 5);
+        fire.setFlammable(NoMansLandIntegration.ASPEN_BOOKSHELF.get(), 5, 5);
     }
 }

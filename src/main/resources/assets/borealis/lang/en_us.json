@@ -16,6 +16,8 @@
   "block.borealis.golden_aspen_leaves": "Golden Aspen Leaves",
   "block.borealis.aspen_sapling": "Aspen Sapling",
   "block.borealis.golden_aspen_sapling": "Golden Aspen Sapling",
+  "block.borealis.trimmed_aspen_planks": "Trimmed Aspen Planks",
+  "block.borealis.aspen_bookshelf": "Aspen Bookshelf",
   "item.borealis.aspen_log": "Aspen Log",
   "item.borealis.aspen_wood": "Aspen Wood",
   "item.borealis.stripped_aspen_log": "Stripped Aspen Log",
@@ -32,5 +34,7 @@
   "item.borealis.aspen_leaves": "Aspen Leaves",
   "item.borealis.golden_aspen_leaves": "Golden Aspen Leaves",
   "item.borealis.aspen_sapling": "Aspen Sapling",
-  "item.borealis.golden_aspen_sapling": "Golden Aspen Sapling"
+  "item.borealis.golden_aspen_sapling": "Golden Aspen Sapling",
+  "item.borealis.trimmed_aspen_planks": "Trimmed Aspen Planks",
+  "item.borealis.aspen_bookshelf": "Aspen Bookshelf"
 }

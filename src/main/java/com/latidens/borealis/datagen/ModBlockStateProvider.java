@@ -1,14 +1,18 @@
 package com.latidens.borealis.datagen;
 
+import com.farcr.nomansland.common.block.TrimmedPlankBlock;
 import com.latidens.borealis.Borealis;
 import com.latidens.borealis.block.ModBlocks;
+import com.latidens.borealis.integration.NoMansLandIntegration;
 import net.minecraft.client.model.Model;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredBlock;
 
 public class ModBlockStateProvider extends BlockStateProvider {
 
@@ -80,5 +84,38 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlock(ModBlocks.GOLDEN_ASPEN_SAPLING.get(),
                 models().cross(ModBlocks.GOLDEN_ASPEN_SAPLING.getId().getPath(),
                         blockTexture(ModBlocks.GOLDEN_ASPEN_SAPLING.get())).renderType("cutout"));
+        simpleBlockWithItem(NoMansLandIntegration.ASPEN_BOOKSHELF.get(),
+                models().cubeColumn("aspen_bookshelf",
+                        blockTexture(NoMansLandIntegration.ASPEN_BOOKSHELF.get()),
+                        blockTexture(ModBlocks.ASPEN_PLANKS.get())));
+        trimmedPlanks(NoMansLandIntegration.TRIMMED_ASPEN_PLANKS);
+    }
+
+    private void trimmedPlanks(DeferredBlock<TrimmedPlankBlock> block) {
+        String name = block.getId().getPath();
+        ResourceLocation top = modLoc("block/" + name + "_top");
+
+        ModelFile full = trimmedModel(name, top, modLoc("block/" + name));
+        ModelFile upper  = trimmedModel(name + "_upper",  top, modLoc("block/" + name + "_upper"));
+        ModelFile lower  = trimmedModel(name + "_lower",  top, modLoc("block/" + name + "_lower"));
+        ModelFile middle = trimmedModel(name + "_middle", top, modLoc("block/" + name + "_middle"));
+
+        getVariantBuilder(block.get()).forAllStates(state -> {
+            boolean up = state.getValue(TrimmedPlankBlock.UP);
+            boolean down = state.getValue(TrimmedPlankBlock.DOWN);
+
+            ModelFile model = up && down ? full
+                            : up         ? upper
+                            : down       ? lower
+                            :              middle;
+            return ConfiguredModel.builder().modelFile(model).build();
+        });
+
+        simpleBlockItem(block.get(), full);
+    }
+
+    private ModelFile trimmedModel(String modelName, ResourceLocation top, ResourceLocation side) {
+        return models().cube(modelName, top, top, side, side, side, side)
+                .texture("particle", top);
     }
 }

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "down=false,up=false": {
+      "model": "borealis:block/trimmed_aspen_planks_middle"
+    },
+    "down=false,up=true": {
+      "model": "borealis:block/trimmed_aspen_planks_upper"
+    },
+    "down=true,up=false": {
+      "model": "borealis:block/trimmed_aspen_planks_lower"
+    },
+    "down=true,up=true": {
+      "model": "borealis:block/trimmed_aspen_planks"
+    }
+  }
+}

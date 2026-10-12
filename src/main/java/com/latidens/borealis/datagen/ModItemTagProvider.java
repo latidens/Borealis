@@ -38,5 +38,6 @@ public class ModItemTagProvider extends ItemTagsProvider {
         copy(BlockTags.TRAPDOORS, ItemTags.TRAPDOORS);
         copy(BlockTags.WOODEN_TRAPDOORS, ItemTags.WOODEN_TRAPDOORS);
         copy(BlockTags.LEAVES, ItemTags.LEAVES);
+        copy(BlockTags.SAPLINGS, ItemTags.SAPLINGS);
     }
 }

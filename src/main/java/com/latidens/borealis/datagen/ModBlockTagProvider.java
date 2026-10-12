@@ -5,6 +5,7 @@ import com.latidens.borealis.block.ModBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -82,5 +83,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.MINEABLE_WITH_HOE)
                 .add(ModBlocks.ASPEN_LEAVES.get())
                 .add(ModBlocks.GOLDEN_ASPEN_LEAVES.get());
+        tag(BlockTags.SAPLINGS)
+                .add(ModBlocks.ASPEN_SAPLING.get())
+                .add(ModBlocks.GOLDEN_ASPEN_SAPLING.get());
     }
 }

@@ -29,6 +29,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.ASPEN_TRAPDOOR.get());
         dropSelf(ModBlocks.ASPEN_PRESSURE_PLATE.get());
         dropSelf(ModBlocks.ASPEN_BUTTON.get());
+        dropSelf(ModBlocks.ASPEN_SAPLING.get());
+        dropSelf(ModBlocks.GOLDEN_ASPEN_SAPLING.get());
 
         add(ModBlocks.ASPEN_SLAB.get(),
                 block -> createSlabItemTable(ModBlocks.ASPEN_SLAB.get()));
@@ -36,10 +38,10 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         add(ModBlocks.ASPEN_DOOR.get(),
                 block -> createDoorTable(ModBlocks.ASPEN_DOOR.get()));
 
-        add(ModBlocks.ASPEN_LEAVES.get(),
-                BlockLootSubProvider::createShearsOnlyDrop);
-        add(ModBlocks.GOLDEN_ASPEN_LEAVES.get(),
-                BlockLootSubProvider::createShearsOnlyDrop);
+        add(ModBlocks.ASPEN_LEAVES.get(), block ->
+                createLeavesDrops(block, ModBlocks.ASPEN_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        add(ModBlocks.GOLDEN_ASPEN_LEAVES.get(), block ->
+                createLeavesDrops(block, ModBlocks.GOLDEN_ASPEN_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
     }
 
 

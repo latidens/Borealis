@@ -74,5 +74,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(ModBlocks.GOLDEN_ASPEN_LEAVES.get(),
                 models().singleTexture("golden_aspen_leaves", mcLoc("block/leaves"), "all",
                         blockTexture(ModBlocks.GOLDEN_ASPEN_LEAVES.get())));
+        simpleBlock(ModBlocks.ASPEN_SAPLING.get(),
+                models().cross(ModBlocks.ASPEN_SAPLING.getId().getPath(),
+                        blockTexture(ModBlocks.ASPEN_SAPLING.get())).renderType("cutout"));
+        simpleBlock(ModBlocks.GOLDEN_ASPEN_SAPLING.get(),
+                models().cross(ModBlocks.GOLDEN_ASPEN_SAPLING.getId().getPath(),
+                        blockTexture(ModBlocks.GOLDEN_ASPEN_SAPLING.get())).renderType("cutout"));
     }
 }

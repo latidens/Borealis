@@ -25,6 +25,16 @@ public class ModCreativeTabs {
                     new ItemStack(ModBlocks.GOLDEN_ASPEN_LEAVES.get()),
                     CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
             );
+            event.insertAfter(
+                    new ItemStack(Items.BIRCH_SAPLING),
+                    new ItemStack(ModBlocks.ASPEN_SAPLING.get()),
+                    CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
+            );
+            event.insertAfter(
+                    new ItemStack(ModBlocks.ASPEN_SAPLING),
+                    new ItemStack(ModBlocks.GOLDEN_ASPEN_SAPLING.get()),
+                    CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
+            );
         }
 
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {

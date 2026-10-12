@@ -7,6 +7,7 @@ import com.latidens.borealis.datagen.ModBlockLootTableProvider;
 import com.latidens.borealis.datagen.ModBlockStateProvider;
 import com.latidens.borealis.event.ModCreativeTabs;
 import com.latidens.borealis.item.ModItems;
+import com.latidens.borealis.worldgen.tree.ModFoliagePlacers;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
@@ -49,6 +50,7 @@ public class Borealis {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModFoliagePlacers.register(modEventBus);
 
         modEventBus.register(DataGenerators.class);
 

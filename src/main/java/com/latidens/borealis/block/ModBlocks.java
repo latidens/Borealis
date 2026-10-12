@@ -2,6 +2,7 @@ package com.latidens.borealis.block;
 
 import com.latidens.borealis.Borealis;
 import com.latidens.borealis.item.ModItems;
+import com.latidens.borealis.worldgen.tree.ModTreeGrowers;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -195,6 +196,12 @@ public class ModBlocks {
                             .pushReaction(PushReaction.DESTROY)
                             .ignitedByLava()
             ));
+
+    public static final DeferredBlock<SaplingBlock> ASPEN_SAPLING = registerBlock("aspen_sapling",
+            () -> new SaplingBlock(ModTreeGrowers.ASPEN, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+
+    public static final DeferredBlock<SaplingBlock> GOLDEN_ASPEN_SAPLING = registerBlock("golden_aspen_sapling",
+            () -> new SaplingBlock(ModTreeGrowers.GOLDEN_ASPEN, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

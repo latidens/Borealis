@@ -195,6 +195,15 @@ public class ModBlocks {
                             .pushReaction(PushReaction.DESTROY)
                             .ignitedByLava()
             ));
+    public static final DeferredBlock<StandingSignBlock> ASPEN_SIGN = registerBlockWithoutItem("aspen_sign",
+            () -> new StandingSignBlock(ModWoodTypes.ASPEN, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN)));
+    public static final DeferredBlock<WallSignBlock> ASPEN_WALL_SIGN = registerBlockWithoutItem("aspen_wall_sign",
+            () -> new WallSignBlock(ModWoodTypes.ASPEN, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_SIGN)));
+    public static final DeferredBlock<CeilingHangingSignBlock> ASPEN_HANGING_SIGN = registerBlockWithoutItem("aspen_hanging_sign",
+            () -> new CeilingHangingSignBlock(ModWoodTypes.ASPEN, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_HANGING_SIGN)));
+    public static final DeferredBlock<WallHangingSignBlock> ASPEN_WALL_HANGING_SIGN = registerBlockWithoutItem("aspen_wall_hanging_sign",
+            () -> new WallHangingSignBlock(ModWoodTypes.ASPEN, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_HANGING_SIGN)));
+
 
     public static final DeferredBlock<SaplingBlock> ASPEN_SAPLING = registerBlock("aspen_sapling",
             () -> new SaplingBlock(ModTreeGrowers.ASPEN, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
@@ -210,6 +219,10 @@ public class ModBlocks {
 
     private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+    }
+
+    private static <T extends Block> DeferredBlock<T> registerBlockWithoutItem(String name, Supplier<T> block) {
+        return BLOCKS.register(name, block);
     }
 
 

@@ -2,6 +2,7 @@ package com.latidens.borealis.datagen;
 
 import com.latidens.borealis.Borealis;
 import com.latidens.borealis.block.ModBlocks;
+import com.latidens.borealis.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -18,5 +19,9 @@ public class ModItemModelProvider extends ItemModelProvider {
                 .texture("layer0", modLoc("block/aspen_sapling"));
         withExistingParent(ModBlocks.GOLDEN_ASPEN_SAPLING.getId().getPath(), mcLoc("item/generated"))
                 .texture("layer0", modLoc("block/golden_aspen_sapling"));
+        basicItem(ModItems.ASPEN_SIGN.get());
+        basicItem(ModItems.ASPEN_HANGING_SIGN.get());
+        basicItem(ModItems.ASPEN_BOAT.get());
+        basicItem(ModItems.ASPEN_CHEST_BOAT.get());
     }
 }

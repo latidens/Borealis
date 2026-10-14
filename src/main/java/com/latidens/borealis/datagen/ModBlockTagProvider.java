@@ -38,7 +38,11 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.ASPEN_FENCE.get())
                 .add(ModBlocks.ASPEN_FENCE_GATE.get())
                 .add(NoMansLandIntegration.TRIMMED_ASPEN_PLANKS.get())
-                .add(NoMansLandIntegration.ASPEN_BOOKSHELF.get());
+                .add(NoMansLandIntegration.ASPEN_BOOKSHELF.get())
+                .add(ModBlocks.ASPEN_SIGN.get())
+                .add(ModBlocks.ASPEN_WALL_SIGN.get())
+                .add(ModBlocks.ASPEN_HANGING_SIGN.get())
+                .add(ModBlocks.ASPEN_WALL_HANGING_SIGN.get());
         tag(BlockTags.LOGS)
                 .add(ModBlocks.ASPEN_LOG.get())
                 .add(ModBlocks.STRIPPED_ASPEN_LOG.get())
@@ -97,5 +101,19 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(NoMansLandIntegration.ASPEN_BOOKSHELF.get());
         tag(NMLTags.TRIMMED_PLANKS.blockTag())
                 .add(NoMansLandIntegration.TRIMMED_ASPEN_PLANKS.get());
+        tag(BlockTags.STANDING_SIGNS)
+                .add(ModBlocks.ASPEN_SIGN.get());
+        tag(BlockTags.WALL_SIGNS)
+                .add(ModBlocks.ASPEN_WALL_SIGN.get());
+        tag(BlockTags.CEILING_HANGING_SIGNS)
+                .add(ModBlocks.ASPEN_HANGING_SIGN.get());
+        tag(BlockTags.WALL_HANGING_SIGNS)
+                .add(ModBlocks.ASPEN_WALL_HANGING_SIGN.get());
+        tag(BlockTags.ALL_SIGNS)
+                .add(ModBlocks.ASPEN_SIGN.get())
+                .add(ModBlocks.ASPEN_WALL_SIGN.get());
+        tag(BlockTags.ALL_HANGING_SIGNS)
+                .add(ModBlocks.ASPEN_HANGING_SIGN.get())
+                .add(ModBlocks.ASPEN_WALL_HANGING_SIGN.get());
     }
 }

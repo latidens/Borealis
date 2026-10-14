@@ -89,6 +89,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
                         blockTexture(NoMansLandIntegration.ASPEN_BOOKSHELF.get()),
                         blockTexture(ModBlocks.ASPEN_PLANKS.get())));
         trimmedPlanks(NoMansLandIntegration.TRIMMED_ASPEN_PLANKS);
+        ModelFile sign = models().sign("aspen_sign", planks);
+        signBlock(ModBlocks.ASPEN_SIGN.get(), ModBlocks.ASPEN_WALL_SIGN.get(), sign);
+
+        ModelFile hanging = models().getBuilder("aspen_hanging_sign")
+                .texture("particle", blockTexture(ModBlocks.STRIPPED_ASPEN_LOG.get()));
+        simpleBlock(ModBlocks.ASPEN_HANGING_SIGN.get(), hanging);
+        simpleBlock(ModBlocks.ASPEN_WALL_HANGING_SIGN.get(), hanging);
     }
 
     private void trimmedPlanks(DeferredBlock<TrimmedPlankBlock> block) {

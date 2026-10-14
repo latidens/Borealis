@@ -35,6 +35,10 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.ASPEN_SAPLING.get());
         dropSelf(ModBlocks.GOLDEN_ASPEN_SAPLING.get());
         dropSelf(NoMansLandIntegration.TRIMMED_ASPEN_PLANKS.get());
+        dropSelf(ModBlocks.ASPEN_SIGN.get());
+        dropSelf(ModBlocks.ASPEN_WALL_SIGN.get());
+        dropSelf(ModBlocks.ASPEN_HANGING_SIGN.get());
+        dropSelf(ModBlocks.ASPEN_WALL_HANGING_SIGN.get());
 
         add(ModBlocks.ASPEN_SLAB.get(),
                 block -> createSlabItemTable(ModBlocks.ASPEN_SLAB.get()));

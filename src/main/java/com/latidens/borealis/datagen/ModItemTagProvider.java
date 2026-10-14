@@ -3,6 +3,7 @@ package com.latidens.borealis.datagen;
 import com.farcr.nomansland.common.registry.NMLTags;
 import com.farcr.nomansland.datagen.tags.NMLItemTagsProvider;
 import com.latidens.borealis.Borealis;
+import com.latidens.borealis.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -42,5 +43,13 @@ public class ModItemTagProvider extends ItemTagsProvider {
         copy(BlockTags.LEAVES, ItemTags.LEAVES);
         copy(BlockTags.SAPLINGS, ItemTags.SAPLINGS);
         copy(NMLTags.TRIMMED_PLANKS.blockTag(), NMLTags.TRIMMED_PLANKS.itemTag());
+        tag(ItemTags.SIGNS)
+                .add(ModItems.ASPEN_SIGN.get());
+        tag(ItemTags.HANGING_SIGNS)
+                .add(ModItems.ASPEN_HANGING_SIGN.get());
+        tag(ItemTags.BOATS)
+                .add(ModItems.ASPEN_BOAT.get());
+        tag(ItemTags.CHEST_BOATS)
+                .add(ModItems.ASPEN_CHEST_BOAT.get());
     }
 }

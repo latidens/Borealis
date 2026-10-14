@@ -2,20 +2,16 @@ package com.latidens.borealis;
 
 import com.latidens.borealis.block.ModBlocks;
 import com.latidens.borealis.block.ModFlammables;
+import com.latidens.borealis.block.ModWoodTypes;
 import com.latidens.borealis.datagen.DataGenerators;
-import com.latidens.borealis.datagen.ModBlockLootTableProvider;
-import com.latidens.borealis.datagen.ModBlockStateProvider;
 import com.latidens.borealis.event.ModCreativeTabs;
 import com.latidens.borealis.integration.NoMansLandIntegration;
 import com.latidens.borealis.item.ModItems;
 import com.latidens.borealis.worldgen.tree.ModFoliagePlacers;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.FireBlock;
+import net.minecraft.client.renderer.Sheets;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.fml.ModList;
+import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -56,6 +52,11 @@ public class Borealis {
 
         modEventBus.register(DataGenerators.class);
 
+        modEventBus.addListener((BlockEntityTypeAddBlocksEvent event) -> {
+            event.modify(BlockEntityType.SIGN, ModBlocks.ASPEN_SIGN.get(), ModBlocks.ASPEN_WALL_SIGN.get());
+            event.modify(BlockEntityType.HANGING_SIGN, ModBlocks.ASPEN_HANGING_SIGN.get(), ModBlocks.ASPEN_WALL_HANGING_SIGN.get());
+        });
+
 
 
         // Register the item to a creative tab
@@ -87,7 +88,8 @@ public class Borealis {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            LOGGER.info("BOREALIS: adding aspen wood type to Sheets");
+            event.enqueueWork(() -> Sheets.addWoodType(ModWoodTypes.ASPEN));
         }
     }
 }

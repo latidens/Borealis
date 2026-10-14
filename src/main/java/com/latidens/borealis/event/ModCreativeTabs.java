@@ -2,6 +2,7 @@ package com.latidens.borealis.event;
 
 import com.latidens.borealis.block.ModBlocks;
 import com.latidens.borealis.integration.NoMansLandIntegration;
+import com.latidens.borealis.item.ModItems;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
@@ -116,5 +117,28 @@ public class ModCreativeTabs {
             );
 
         }
+        if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
+            event.insertAfter(
+                    new ItemStack(Items.BIRCH_SIGN),
+                    new ItemStack(ModItems.ASPEN_SIGN.get()),
+                    CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
+            );
+            event.insertAfter(
+                    new ItemStack(ModItems.ASPEN_SIGN.get()),
+                    new ItemStack(ModItems.ASPEN_HANGING_SIGN.get()),
+                    CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
+            );
     }
-}
+        if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            event.insertAfter(
+                    new ItemStack(Items.BIRCH_CHEST_BOAT),
+                    new ItemStack(ModItems.ASPEN_BOAT.get()),
+                    CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
+            );
+            event.insertAfter(
+                    new ItemStack(ModItems.ASPEN_BOAT.get()),
+                    new ItemStack(ModItems.ASPEN_CHEST_BOAT.get()),
+                    CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
+            );
+        }
+}}
